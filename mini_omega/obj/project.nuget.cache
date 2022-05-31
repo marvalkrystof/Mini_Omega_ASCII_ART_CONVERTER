@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9cqTDgoZ7fWCVOtkM1Ywo4sEfz21zqHveBcGMHgVumf7A+LZepSeveTncl/EniykAiLZOoWwp/J4yE9gV4updA==",
+  "success": true,
+  "projectFilePath": "/home/krystof/Desktop/mini_omega/mini_omega/mini_omega.csproj",
+  "expectedPackageFiles": [
+    "/home/krystof/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
