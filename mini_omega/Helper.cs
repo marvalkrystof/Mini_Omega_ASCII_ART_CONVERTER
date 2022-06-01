@@ -88,6 +88,24 @@ namespace mini_omega
             }
         return compressedPixels;
         }
+    public static int[,] Upscale(int[,] pixels) {
+        int[,] upscaledPixels = new int[pixels.GetLength(0)*2,pixels.GetLength(1)*2];
+
+        for(int i= 0; i<pixels.GetLength(0);i+=1)
+            {
+                for (int y = 0; y < pixels.GetLength(1); y+=1)
+                {
+                    int indexI = i*2;
+                    int indexY = y*2;
+                    int pixel = pixels[i,y];
+                    upscaledPixels[indexI,indexY] = pixel;
+                    upscaledPixels[indexI+1,indexY] = pixel;
+                    upscaledPixels[indexI,indexY+1] = pixel;
+                    upscaledPixels[indexI+1,indexY+1] = pixel;
+                }
+            }
+        return upscaledPixels;
+    }
 
     }
 

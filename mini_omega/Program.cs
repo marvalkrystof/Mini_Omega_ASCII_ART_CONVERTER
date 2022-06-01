@@ -7,9 +7,10 @@ namespace mini_omega
     {
         static void Main(string[] args)
         {
-                
         Output.ConsoleOut();
-
+        /*MenuConsole console = new MenuConsole();
+        console.MainMenu();
+        */
 
         }
     }
