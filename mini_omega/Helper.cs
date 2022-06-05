@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using FFMpegCore;
+using FFMpegCore.Enums;
+using System.Configuration;
+using System.IO;
 
 namespace mini_omega
 {
@@ -106,10 +110,70 @@ namespace mini_omega
             }
         return upscaledPixels;
     }
+ 
+     public static void ConvertVideoToImages(string videoPath) {
+        
+   
+    GlobalFFOptions.Configure(new FFOptions { BinaryFolder = "/usr/bin", TemporaryFilesFolder = "/tmp" }); //configuring ffmpeg location
+
+
+    FFMpegArguments.FromFileInput(videoPath).OutputToFile(AppContext.BaseDirectory+"Video/Frame%d.png", true, 
+    Options => { Options.WithVideoCodec(VideoCodec.Png); }).ProcessSynchronously();   
 
     }
 
-       
+    public static void ExtractControlFrame(string videoPath) {
+      
+    GlobalFFOptions.Configure(new FFOptions { BinaryFolder = "/usr/bin", TemporaryFilesFolder = "/tmp" }); //configuring ffmpeg location
 
 
+    FFMpegArguments.FromFileInput(videoPath).OutputToFile(AppContext.BaseDirectory+"Video/Temp.png", true, 
+    Options => { Options.WithVideoCodec(VideoCodec.Png); Options.WithFrameOutputCount(1); }).ProcessSynchronously();
+    }
+
+    
+    public static char[,] asciiArray(string filePath) {
+
+            char[] chars = ConfigurationManager.AppSettings.Get("Characters").ToCharArray();
+            Bitmap bitmap = new Bitmap(filePath);
+            int[,] array;
+            
+            
+            array = Helper.GrayScaleBitmapToArray(Helper.ConvertToGrayScale(bitmap));
+            array = Helper.Compress(array);
+            array = Helper.Compress(array);
+              array = Helper.Compress(array);
+            char[,] asciiImage = Helper.PixelsArrayToChars(array, chars);
+            return asciiImage;
+         
+    }
+    public static void deleteFilesInDirectory(string dirPath) {
+    DirectoryInfo di = new DirectoryInfo(dirPath);
+    
+    foreach (FileInfo file in di.GetFiles())
+    {
+    file.Delete(); 
+    }
+    }
+    
+    public static bool isDirectoryEmpty(string dirPath) {
+        DirectoryInfo di = new DirectoryInfo(dirPath);
+        return di.GetFiles().GetLength(0) == 0;
+    }
+
+    public static bool sameFiles(string filePath1, string filePath2)  {
+            FileInfo file = new FileInfo(filePath1);
+            FileInfo file2 = new FileInfo(filePath2);
+
+            return file.Length == file2.Length;
+
+    }
+ 
+    public static int getDirectoryFileCount(string dirPath) {
+         DirectoryInfo di = new DirectoryInfo(dirPath);
+         return di.GetFiles().Length;
+    }
+
+
+    }
 }

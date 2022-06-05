@@ -38,6 +38,18 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Accord.Video.FFMPEG": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "FFMpegCore": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[6.0.0, )"

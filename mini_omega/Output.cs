@@ -1,26 +1,19 @@
 using System;
 using System.Drawing;
 using System.IO;
+using System.Configuration;
+using System.Threading;
+
+
 namespace mini_omega
 {
+//youtube api    
     public class Output
     {
-         private static string characters = "_.,-=+:;cba!?0123456789$W#@Ñ";
-
-        public static string Characters { get => characters; set => characters = value; }
-
         public static void ConsoleOut() {
+          string imgPath = ConfigurationManager.AppSettings.Get("IMGpath");
           
-         
-            char[] chars = Characters.ToCharArray();
-            Bitmap bitmap = new Bitmap("/home/krystof/Desktop/mini_omega/mini_omega/bin/Debug/netcoreapp3.1/man_black.jpg");
-            int[,] array;
-            
-            
-            array = Helper.GrayScaleBitmapToArray(Helper.ConvertToGrayScale(bitmap));
-
-            char[,] asciiImage = Helper.PixelsArrayToChars(array, chars);
-            
+          char[,] asciiImage = Helper.asciiArray(imgPath);
          
                 for (int i = 0; i < asciiImage.GetLength(1); i++)
                 {
@@ -35,21 +28,15 @@ namespace mini_omega
 
         }
         }
-        public static void TxtOut(string filePath) {
+        public static void TxtOut() {
         
+        string imgPath = ConfigurationManager.AppSettings.Get("IMGpath");
+        string filePath = ConfigurationManager.AppSettings.Get("TXToutputDestination");
         if(Path.GetExtension(filePath) == ".txt") {
    
-      char[] chars = Characters.ToCharArray();
-            Bitmap bitmap = new Bitmap("/home/krystof/Desktop/mini_omega/mini_omega/bin/Debug/netcoreapp3.1/man_black.jpg");
-            int[,] array;
-            array = Helper.GrayScaleBitmapToArray(Helper.ConvertToGrayScale(bitmap));
-            char[,] asciiImage = Helper.PixelsArrayToChars(array, chars);
-            
+        char[,] asciiImage = Helper.asciiArray(imgPath);     
         using (StreamWriter writer = new StreamWriter(filePath))  
         {  
- 
-   
-         
                 for (int i = 0; i < asciiImage.GetLength(1); i++)
                 {
             for (int y = 0; y < asciiImage.GetLength(0); y++)
@@ -60,10 +47,7 @@ namespace mini_omega
 
                 }
                 writer.WriteLine(); 
-
         }
-       
-
         }              
         }
         else {
@@ -71,6 +55,46 @@ namespace mini_omega
         }
 
         }
- 
+
+    public static void VideoOut() {
+        string videoDir = AppContext.BaseDirectory +"/Video";
+
+        string videoPath = ConfigurationManager.AppSettings.Get("VIDpath");
+       
+        if(Helper.isDirectoryEmpty(videoDir)) {
+            Helper.ConvertVideoToImages(videoPath);
+        }
+        else {         
+         if(File.Exists(videoDir+"/Frame1.png")) {
+            Helper.ExtractControlFrame(videoPath);
+            if(!Helper.sameFiles(videoDir+"/Frame1.png",videoDir+"/Temp.png")) {
+                Helper.ConvertVideoToImages(videoPath);
+        }
+            File.Delete(videoDir+"/Temp.png");
+        }
+        }
+       
+               for(int file=1;file<=Helper.getDirectoryFileCount(videoDir);file++) {
+                string fileName = "/Frame"+file+".png";        
+                string filePath = videoDir + fileName;
+                char[,] asciiImage = Helper.asciiArray(filePath);  
+              
+                    for (int i = 0; i < asciiImage.GetLength(1); i++)
+                        {
+                            for (int y = 0; y < asciiImage.GetLength(0); y++)
+                                            {   
+                                Console.Write(asciiImage[y, i]);
+                                Console.Write(" ");
+            
+
+                                            }
+                Console.WriteLine(); 
+
+        }
+        Thread.Sleep(1000);
+        Console.Clear();
     }
+    }
+    }
+
 }

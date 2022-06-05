@@ -1,11 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "9cqTDgoZ7fWCVOtkM1Ywo4sEfz21zqHveBcGMHgVumf7A+LZepSeveTncl/EniykAiLZOoWwp/J4yE9gV4updA==",
+  "dgSpecHash": "204pfIoE+XQltr/WbfW1eV999WNtRCim0PMJjrKE6+RsrEQoP9xSHBebx8Hy6Ps1bKLokyFG+6EoQ1YGJZQZxg==",
   "success": true,
   "projectFilePath": "/home/krystof/Desktop/mini_omega/mini_omega/mini_omega.csproj",
   "expectedPackageFiles": [
+    "/home/krystof/.nuget/packages/accord/3.8.0/accord.3.8.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/accord.video/3.8.0/accord.video.3.8.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/accord.video.ffmpeg/3.8.0/accord.video.ffmpeg.3.8.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/ffmpegcore/4.8.0/ffmpegcore.4.8.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/instances/2.0.0/instances.2.0.0.nupkg.sha512",
     "/home/krystof/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512"
+    "/home/krystof/.nuget/packages/system.configuration.configurationmanager/6.0.0/system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.security.accesscontrol/6.0.0/system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.security.cryptography.protecteddata/6.0.0/system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.security.permissions/6.0.0/system.security.permissions.6.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.text.json/6.0.2/system.text.json.6.0.2.nupkg.sha512",
+    "/home/krystof/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

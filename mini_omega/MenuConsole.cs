@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-
-using System.Text;
+using System.Configuration;
 
 namespace mini_omega
 {
@@ -20,21 +19,36 @@ namespace mini_omega
                 var item = m.Execute();
                 item.Execute();
             })));
-
-            menu.Add(new MenuItem("2.Settings", new Action(() =>
+            menu.Add(new MenuItem("2.Change image path. Current image path: "+ConfigurationManager.AppSettings.Get("IMGpath"), new Action(() =>
+            {
+            //todo check if file is png or jpg
+            Console.WriteLine("Enter path:");
+            string path = Console.ReadLine();                
+            ConfigurationManager.AppSettings.Set("IMGpath",path);
+            })));
+            
+            menu.Add(new MenuItem("3.App Settings", new Action(() =>
             {
                 var m = MenuSettings();
                 var item = m.Execute();
                 item.Execute();
                 
             })));
-            menu.Add(new MenuItem("3.Run test examples", new Action(() =>
+              menu.Add(new MenuItem("4.Supported file types", new Action(() =>
+            {
+                Console.WriteLine("-------------------");
+                Console.WriteLine("Images: jpg/jpeg,png");
+                Console.WriteLine("TXT output: txt");
+                Console.WriteLine("-------------------");
+                
+            })));  
+            menu.Add(new MenuItem("5.Run test examples", new Action(() =>
             {
                 //todo
                 
             })));
 
-            menu.Add(new MenuItem("3.Exit ", new Action(() =>
+            menu.Add(new MenuItem("6.Exit ", new Action(() =>
             {
                 exit = true;
             })));
@@ -51,29 +65,19 @@ namespace mini_omega
         private Menu MenuSettings()
         {
             Menu m = new Menu("Settings: ");
-            m.Add(new MenuItem("1. Choose Charset ", new Action(() =>
+            m.Add(new MenuItem("1. Choose Charset. Current charset: "+ConfigurationManager.AppSettings.Get("Characters"), new Action(() =>
                 {
                 var m = MenuCharset();
                 var item = m.Execute();
                 item.Execute();
                 })
             ));
-             m.Add(new MenuItem("2.Change .txt output destination", new Action(() =>
+             m.Add(new MenuItem("2.Change .txt output destination. Current destination:"+ConfigurationManager.AppSettings.Get("TXToutputDestination"), new Action(() =>
                 {
                 //todo
                 })
             ));
-            m.Add(new MenuItem("3.Configure tcp server", new Action(() =>
-                {
-                //todo if going to implement
-                })
-            ));
-            m.Add(new MenuItem("3.Save settings", new Action(() =>
-                {
-                //todo
-                })
-            ));
-             m.Add(new MenuItem("2.Back ", new Action(() =>
+             m.Add(new MenuItem("3.Back ", new Action(() =>
                 {
                 
                 })
@@ -84,13 +88,13 @@ namespace mini_omega
    private Menu MenuCharset()
         {
             Menu m = new Menu("Charsets: ");
-            m.Add(new MenuItem("1. Dark -> Light ", new Action(() =>
+            m.Add(new MenuItem("_.,-=+:;cba!?0123456789$W#@Ñ", new Action(() =>
                 {
-                Output.Characters = "_.,-=+:;cba!?0123456789$W#@Ñ";
+                ConfigurationManager.AppSettings.Set("Characters","_.,-=+:;cba!?0123456789$W#@Ñ");
                 })));
-            m.Add(new MenuItem("2. Light -> Dark ", new Action(() =>
+            m.Add(new MenuItem("Ñ@#W$9876543210?!abc;:+=-,._", new Action(() =>
                 {
-                Output.Characters = "Ñ@#W$9876543210?!abc;:+=-,._";
+                ConfigurationManager.AppSettings.Set("Characters","Ñ@#W$9876543210?!abc;:+=-,._");
                 })));
                 m.Add(new MenuItem("3.Back ", new Action(() =>
                 {
@@ -108,9 +112,9 @@ namespace mini_omega
                 Output.ConsoleOut();
                 })
             ));
-        m.Add(new MenuItem("2.Text ", new Action(() =>
+        m.Add(new MenuItem("2.Text. Destination file: "+ConfigurationManager.AppSettings.Get("TXToutputDestination"), new Action(() =>
                 {
-                Output.TxtOut("TODO");
+                Output.TxtOut();
                 })
             ));
             m.Add(new MenuItem("3.Back ", new Action(() =>

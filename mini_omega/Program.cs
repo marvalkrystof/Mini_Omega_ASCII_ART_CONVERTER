@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Configuration;
 
 namespace mini_omega
 {
@@ -7,11 +8,17 @@ namespace mini_omega
     {
         static void Main(string[] args)
         {
-        Output.ConsoleOut();
-        /*MenuConsole console = new MenuConsole();
-        console.MainMenu();
-        */
+        
+       // Console.WriteLine(Helper.isDirectoryEmpty("/home/krystof/Desktop/mini_omega/mini_omega/bin/Debug/netcoreapp3.1/Video"));
+        
+     // Helper.ConvertVideoToImages();  
+        Output.VideoOut();
+
+    /*   MenuConsole console = new MenuConsole();
+       console.MainMenu();
+    */
+        
 
         }
     }
-}
+}   
