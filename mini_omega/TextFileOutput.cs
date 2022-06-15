@@ -1,32 +1,3 @@
-using System;
-using System.Configuration;
-using System.IO;
-
-namespace mini_omega
-{
-    public class TextFileOutput : IOutputStrategy
-    {
-        public void Output(char[,] asciiImage)
-        {
-        string filePath = ConfigurationManager.AppSettings.Get("TXToutputDestination");
-        if(Path.GetExtension(filePath) == ".txt") {
-        
-        using (StreamWriter writer = new StreamWriter(filePath))  
-        {  
-                for (int i = 0; i < asciiImage.GetLength(1); i++)
-                {
-            for (int y = 0; y < asciiImage.GetLength(0); y++)
-            {   
-                    writer.Write(asciiImage[y, i]);
-                    writer.Write(" ");
-                }
-                writer.WriteLine(); 
-        }
-        }              
-        }
-        else {
-            Console.WriteLine("Destination file is not .txt");
-        }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:04e7801d4beec3f29329d4680eb6f23480b304601f6e7e987038e30e5038edc9
+size 924

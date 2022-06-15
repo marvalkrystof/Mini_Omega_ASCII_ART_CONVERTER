@@ -1,30 +1,3 @@
-{
-  "version": 2,
-  "dgSpecHash": "vbQqHzWSkUABDsado6gO8As1SKCAotd3iRizYIO+WYSPrzyDwk9FIJXA1zX83WAssrlLd2Y33tCrY2xfQkFq8A==",
-  "success": true,
-  "projectFilePath": "/home/krystof/Desktop/mini_omega/mini_omega/mini_omega.csproj",
-  "expectedPackageFiles": [
-    "/home/krystof/.nuget/packages/anglesharp/0.16.1/anglesharp.0.16.1.nupkg.sha512",
-    "/home/krystof/.nuget/packages/cliwrap/3.4.2/cliwrap.3.4.2.nupkg.sha512",
-    "/home/krystof/.nuget/packages/ffmpegcore/4.8.0/ffmpegcore.4.8.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/instances/2.0.0/instances.2.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.configuration.configurationmanager/6.0.0/system.configuration.configurationmanager.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.security.accesscontrol/6.0.0/system.security.accesscontrol.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.security.cryptography.protecteddata/6.0.0/system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.security.permissions/6.0.0/system.security.permissions.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.text.encoding.codepages/5.0.0/system.text.encoding.codepages.5.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.text.json/6.0.2/system.text.json.6.0.2.nupkg.sha512",
-    "/home/krystof/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
-    "/home/krystof/.nuget/packages/youtubeexplode/6.1.2/youtubeexplode.6.1.2.nupkg.sha512",
-    "/home/krystof/.nuget/packages/youtubeexplode.converter/6.1.2/youtubeexplode.converter.6.1.2.nupkg.sha512"
-  ],
-  "logs": []
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:09b918b3c6863bc80f9b6b965152c06ad58861bab23773f7d4cf057d07dc4f68
+size 2789

@@ -1,32 +1,3 @@
-using System;
-using System.Runtime.Serialization;
-
-namespace mini_omega
-{
-    public class WrongInputFileFormatException : Exception
-    {
-         public string FilePath { get; }
-        public WrongInputFileFormatException()
-        {
-        }
-
-        public WrongInputFileFormatException(string message) : base(message)
-        {
-        }
-
-        public WrongInputFileFormatException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected WrongInputFileFormatException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
-            public WrongInputFileFormatException(string message, string filePath)
-        : this(message)
-    {
-       FilePath = filePath;
-    }
-
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c32aad15e094bde02c745c0b7d078fad68ada794cb4afccf39bdb33f1b013222
+size 844

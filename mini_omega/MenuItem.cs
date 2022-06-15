@@ -1,29 +1,3 @@
-using System;
-
-namespace mini_omega
-{
-    class MenuItem
-    {
-
-        private string description;
-        private Action action;
-
-        public MenuItem(string popis, Action akce)
-        {
-            this.description = popis;
-            this.action = akce;
-        }
-
-        public override string ToString()
-        {
-            return description;
-        }
-
-        public void Execute()
-        {
-            action();
-        }
-    }
-
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:44633ed347342e017c583f1b25221d51e289a1e6a9679c2d08859f7f280e8e9e
+size 506
