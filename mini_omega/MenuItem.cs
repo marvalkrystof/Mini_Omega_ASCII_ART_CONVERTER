@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace mini_omega
 {
@@ -24,7 +22,6 @@ namespace mini_omega
         public void Execute()
         {
             action();
-       
         }
     }
 

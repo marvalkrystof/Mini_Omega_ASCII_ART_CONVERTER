@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace mini_omega
 {
-    class Menu
+     class Menu
     {
         private string caption { get; }
         private List<MenuItem> menuItems = new List<MenuItem>();
@@ -27,17 +26,22 @@ namespace mini_omega
 
         public MenuItem Selection()
         {
+            try {
             string input = Console.ReadLine();
             int idx;
             if (!int.TryParse(input, out idx))
             {
-                Console.Error.WriteLine($"Invalid input '{input}', please enter an intexer");
+                Console.Error.WriteLine($"Invalid input '{input}', please enter an indexer");
                 return null;
             }
 
             
             return menuItems[idx-1];
-        }
+            } catch(ArgumentOutOfRangeException) {
+                Console.WriteLine("The index was out of bounds, select correct index");
+                return Selection();
+            }
+         }
 
         public MenuItem Execute()
         {
