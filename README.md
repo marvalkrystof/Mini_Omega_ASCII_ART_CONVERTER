@@ -1,3 +1,6 @@
+To clone this repository use the git lfs clone command instead of regular git clone otherwise you'll only pull lfs pointer files!!!
+
+
 # Mini_Omega_ASCII_ART_CONVERTER
 
  About
